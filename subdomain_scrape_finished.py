@@ -23,6 +23,7 @@ for subdomain in subdomains:
         print("=> Discovered subdomain:", url)
         subdomain_name = url.split("//")[1].split(".")[0]
         dict = {'subdomain name': subdomain_name, 'domain name': url}
+        #Convert the dictionary gotten to json
         dict = json.dumps(dict)
         print(dict)
 file.close()
