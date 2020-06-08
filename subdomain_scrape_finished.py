@@ -36,11 +36,17 @@ def read_list():
     
 def main(domain, subdomains):
     discovered = []
+    
+    # Bypass threading if running on python 2
+    if sys.version_info[0] < 3:
+        [discovered.append(scrape(domain, subdomain)) for subdomain in subdomains]
+        return discovered
+    
     with concurrent.futures.ThreadPoolExecutor() as executor:
-        #executor.map(scrape_wrapper, subdomains)
+        # executor.map(scrape_wrapper, subdomains)
         
         future_to_url = {executor.submit(scrape, domain, subdomain): subdomain for subdomain in subdomains}
-        #[scrape_wrapper(subdomain) for subdomain in subdomains]
+        # [scrape_wrapper(subdomain) for subdomain in subdomains]
         
         for future in concurrent.futures.as_completed(future_to_url):
             url = future_to_url[future]
