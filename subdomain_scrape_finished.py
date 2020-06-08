@@ -1,4 +1,4 @@
-import requests
+import requests, json
 
 # the domain to scan for subdomains
 domain = "annashut.com"
@@ -20,4 +20,9 @@ for subdomain in subdomains:
         # if the subdomain does not exist, just pass, print nothing
         pass
     else:
-        print("[+] Discovered subdomain:", url)
+        print("=> Discovered subdomain:", url)
+        subdomain_name = url.split("//")[1].split(".")[0]
+        dict = {'subdomain name': subdomain_name, 'domain name': url}
+        dict = json.dumps(dict)
+        print(dict)
+file.close()
