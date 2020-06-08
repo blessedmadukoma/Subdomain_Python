@@ -1,7 +1,13 @@
-import requests, json
+import requests
+import json
+import sys
 
-# the domain to scan for subdomains
-domain = "annashut.com"
+
+# get the domain to scan for subdomains
+
+# search for command line arguments, reset to "annashut.com" if not found
+args = sys.argv[1:]
+domain = args[0] if len(args) > 0 else "annashut.com"
 
 # read all subdomains
 file = open("subdomains.txt")
@@ -9,6 +15,7 @@ file = open("subdomains.txt")
 content = file.read()
 # split by new lines
 subdomains = content.splitlines()
+file.close()
 
 for subdomain in subdomains:
     # construct the url
@@ -26,4 +33,3 @@ for subdomain in subdomains:
         #Convert the dictionary gotten to json
         dict = json.dumps(dict)
         print(dict)
-file.close()
