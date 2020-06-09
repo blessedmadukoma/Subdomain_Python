@@ -6,5 +6,7 @@ $result=$class->subdomainArr();
 // print_r($result);
 
 foreach($result as $re){
-    print_r($re);
+    echo "<pre>";
+    echo "<a href='".$re['url']."'>".$re['name']."</a>";
+    echo "</pre>";
 }

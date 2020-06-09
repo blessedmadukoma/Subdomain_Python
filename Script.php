@@ -17,10 +17,12 @@ class Script
             $url=end($split);
             $first=explode('.',$url);
             $subdomainName=$first[0];
-            $domain[$subdomainName]=$array;
+            $domain['name']=$subdomainName;
+            $domain['url']=$array;
+            array_push($this->subdomain, $domain);
        }
 
-       return $domain;
+       return $this->subdomain;
    }
 }
 
