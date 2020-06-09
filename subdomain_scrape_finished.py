@@ -80,6 +80,6 @@ if __name__ == '__main__':
     # Uncomment next line to print the result
     # pprint(discovered)
 
-    Write the output to a file as a json array
+    #Write the output to a file as a json array
     g.write(json.dumps(discovered))
     g.close()
