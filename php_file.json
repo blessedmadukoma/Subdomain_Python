@@ -1,8 +1,1 @@
-{"subdomain name": "cpanel", "domain name": "https://cpanel.annashut.com"}
-{"subdomain name": "domain", "domain name": "https://domain.annashut.com"}
-{"subdomain name": "hngi7", "domain name": "https://hngi7.annashut.com"}
-{"subdomain name": "mail", "domain name": "https://mail.annashut.com"}
-{"subdomain name": "test", "domain name": "https://test.annashut.com"}
-{"subdomain name": "webdisk", "domain name": "https://webdisk.annashut.com"}
-{"subdomain name": "webmail", "domain name": "https://webmail.annashut.com"}
-{"subdomain name": "www", "domain name": "https://www.annashut.com"}
+["https://cpanel.annashut.com", "https://domain.annashut.com", "https://hngi7.annashut.com", "https://mail.annashut.com", "https://test.annashut.com", "https://webdisk.annashut.com", "https://webmail.annashut.com", "https://www.annashut.com"]
