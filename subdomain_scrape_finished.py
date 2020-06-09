@@ -7,12 +7,13 @@ import requests
 import json
 import sys
 import time
+import re
 
 
 def scrape(domain, subdomain):
     #for subdomain in subdomains:
         # construct the url
-    # url = f"https://{subdomain}.{domain}"
+    #url = f"https://{subdomain}.{domain}"
     url = "https://"+ subdomain + "."+domain
     
     try:
@@ -46,17 +47,11 @@ def read_list():
     
 def main(domain, subdomains):
     discovered = []
-    
-    # Bypass threading if running on python 2
-    if sys.version_info[0] < 3:
-        [discovered.append(scrape(domain, subdomain)) for subdomain in subdomains]
-        return discovered
-    
     with concurrent.futures.ThreadPoolExecutor() as executor:
-        # executor.map(scrape_wrapper, subdomains)
+        #executor.map(scrape_wrapper, subdomains)
         
         future_to_url = {executor.submit(scrape, domain, subdomain): subdomain for subdomain in subdomains}
-        # [scrape_wrapper(subdomain) for subdomain in subdomains]
+        #[scrape_wrapper(subdomain) for subdomain in subdomains]
         
         for future in concurrent.futures.as_completed(future_to_url):
             url = future_to_url[future]
@@ -71,6 +66,7 @@ def main(domain, subdomains):
     
 
 if __name__ == '__main__':
+    g = open("php_file.json", 'w')
     # search for command line arguments, reset to "annashut.com" if not found
     args = sys.argv[1:]
     domain = args[0] if len(args) > 0 else "annashut.com"
@@ -83,3 +79,4 @@ if __name__ == '__main__':
     
     # Uncomment next line to print the result
     # pprint(discovered)
+    g.close()
