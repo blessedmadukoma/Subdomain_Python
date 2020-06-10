@@ -10,14 +10,14 @@ import os.path
 def get_subdomain_subpr(domain):
     base_dir = os.path.dirname(__file__)
     subprocess.run(["python", os.path.join(base_dir, "Sublist3r", "sublist3r.py"), "-d", domain,
-                    "-o", os.path.join(base_dir, "subdomain_list.txt")])
-    subdomains = open(os.path.join(base_dir, "subdomain_list.txt"), 'r').readlines()
+                    "-o", os.path.join(base_dir, "subdomain_list.json")])
+    subdomains = open(os.path.join(base_dir, "subdomain_list.json"), 'r').readlines()
     subdomains_new = []
     for line in subdomains:
         line = line.strip()
         if line:
             subdomains_new.append(line)
-    with open(os.path.join(base_dir, "subdomain_list.txt"), 'w') as file:
+    with open(os.path.join(base_dir, "subdomain_list.json"), 'w') as file:
         file.write(json.dumps(subdomains_new))
 
 
