@@ -44,6 +44,3 @@ To install sublist3r, open a terminal window and run
 
 
 ### *#Team-Neon*
-
-
-[]: https://github.com/aboul3la/Sublist3r
