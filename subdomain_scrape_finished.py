@@ -2,7 +2,6 @@
 
 from pprint import pprint
 import concurrent.futures
-import threading
 import requests
 import json
 import sys
@@ -19,21 +18,13 @@ def scrape(domain, subdomain):
     try:
         # if this raises an ERROR, that means the subdomain does not exist
         requests.get(url)
-    except requests.ConnectionError as error:
+    except requests.ConnectionError:
         # if the subdomain does not exist, just pass, print nothing
-        raise error
+        pass
     else:
         for subdomain in subdomains:
             print("==> Discovered subdomain:", url)
-            subdomain_name = url.split("//")[1].split(".")[0]
-            dict = {'subdomain name': subdomain_name, 'domain name': url}
-            #Convert the dictionary gotten to json
-            #dict = json.dumps(dict)
-            #print(dict)
-            # open the file with r meaning to treat as raw string and ignore errors
-            #g = open("php_file.json", "a")
-            #g.write(dict + "\n")  # Writes each mail into mails.csv
-            #g.close  # closes the file
+            # subdomain_name = url.split("//")[1].split(".")[0]
             return url
     
     
@@ -58,7 +49,6 @@ def main(domain, subdomains):
             try:
                 data = future.result()
             except Exception as exc:
-                #print('%r generated an exception: %s' % (url, exc))
                 pass
             else:
                 discovered.append(data)
@@ -80,6 +70,6 @@ if __name__ == '__main__':
     # Uncomment next line to print the result
     # pprint(discovered)
 
-    #Write the output to a file as a json array
+    # Write the output to a file as a json array
     g.write(json.dumps(discovered))
     g.close()
