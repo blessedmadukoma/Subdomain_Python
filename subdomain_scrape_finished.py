@@ -66,7 +66,7 @@ def main(domain, subdomains):
     
 
 if __name__ == '__main__':
-    g = open("php_file.json", 'w')
+    g = open("subdomain_list.json", 'w')
     # search for command line arguments, reset to "annashut.com" if not found
     args = sys.argv[1:]
     domain = args[0] if len(args) > 0 else "annashut.com"
