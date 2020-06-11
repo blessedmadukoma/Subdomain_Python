@@ -1,6 +1,5 @@
 # Subdomain checking code for Team-Neon backend
 
-<<<<<<< HEAD
 ## Setup
 To run the python script successfully please make sure you have **Sublist3r** installed. For instructions
 to install Sublist3r [see below](https://github.com/madukomablessed/Subdomain_Python#sublist3r-installation).
@@ -42,30 +41,5 @@ To install sublist3r, open a terminal window and run
   
   - `python setup.py install`
 
-  ## php script
-  steps to get the script running:
-  - Run `php -S localhost:3000` on your terminal
-  - On the index.php file, insert the url you wish to get the subdomain from
-  e.g:
-  `require ('Script.php');
-$class=new Script('<url>');`
-
-- Then run `localhost:3000` on your browser
-
 
 ### *#Team-Neon*
-=======
-## Setup And Instructions
-For python devs. To run the python script successfully please make sure you install the following modules with pip:
-- `pip install requests`
-- `pip install json`
-
-After installing, run the script from command line in the form 
-- `python subdomain_scrape_finished.py <domain>` 
-
-Where `<domain>` is the domain you wish to find its subdomains
-
-For other devs, call the php_file.json and work with that
-
-## *#Team-Neon*
->>>>>>> 6e57ac51a3396edc9994005b010d6fa607b9dcea
