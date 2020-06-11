@@ -1,12 +1,19 @@
 <?php
 
 require ('Script.php');
-$class=new Script();
+$class=new Script('jumia.com.ng');
 $result=$class->subdomainArr();
 // print_r($result);
 
-foreach($result as $re){
-    echo "<pre>";
-    echo "<a href='".$re['url']."'>".$re['name']."</a>";
-    echo "</pre>";
+if (is_array($result)) {
+    foreach($result as $re){
+        print_r($re);
+        echo "<pre>";
+        echo "<a href='".$re['url']."'>".$re['name']."</a>";
+        echo "</pre>";
+    } 
+}else{
+    echo $result;
 }
+ 
+
