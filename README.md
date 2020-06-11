@@ -44,13 +44,13 @@ To install sublist3r, open a terminal window and run
 
   ## php script
   steps to get the script running:
-  -run `php -S localhost:3000` on your terminal
-  -on the index.php file, insert the url you wish to get the subdomain from
+  - Run `php -S localhost:3000` on your terminal
+  - On the index.php file, insert the url you wish to get the subdomain from
   e.g:
   `require ('Script.php');
 $class=new Script('<url>');`
 
-- then run `localhost:3000` on your browser
+- Then run `localhost:3000` on your browser
 
 
 ### *#Team-Neon*
