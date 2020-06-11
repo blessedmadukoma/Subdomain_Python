@@ -1,7 +1,7 @@
 <?php
 
 require ('Script.php');
-$class=new Script('jumia.com.ng');
+$class=new Script('');
 $result=$class->subdomainArr();
 // print_r($result);
 
