@@ -11,9 +11,9 @@ import re
 
 def scrape(domain, subdomain):
     #for subdomain in subdomains:
-        # construct the url
+    # construct the url
     #url = f"https://{subdomain}.{domain}"
-    url = "https://"+ subdomain + "."+domain
+    url = "https://" + subdomain + "." + domain
     
     try:
         # if this raises an ERROR, that means the subdomain does not exist
