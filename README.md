@@ -1,4 +1,4 @@
-# Subdomain checking code for Team-Neon backend
+# Subdomain checking code for Team-Neon backend by @Ataman and @Blessed
 
 ## Setup
 To run the python script successfully please make sure you have **Sublist3r** installed. For instructions
